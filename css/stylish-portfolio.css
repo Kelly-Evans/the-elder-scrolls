@@ -224,6 +224,14 @@ hr.small {
     margin: 10px;
 }
 
+#hide {
+	display: none
+}
+
+#center {
+	text-align: center
+}
+
 /* Map */
 
 .map {
