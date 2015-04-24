@@ -234,15 +234,18 @@
                         </div>
 						<div class="col-md-6">
                             <div class="portfolio-item" id="hide">
-                                <a class="image-gal" href="img/tes.png" title="" data-gallery>
-                                    <img class="img-portfolio img-responsive" src="img/tes.png" alt="8">
-                                </a>
-                            </div>
+                                <a class="image-gal" href="https://www.youtube.com/watch?v=uhhoXn0a3D4"
+                                    type="text/html"
+                                    data-youtube="uhhoXn0a3D4"
+                                    poster=""
+                                    >Test 1</a>
+                           </div>
                         </div>
 
 					</div>
                     <!-- /.row (nested) -->
-                    <button onClick=javascript:popUp("media.html")   id="image-gallery-button" type="button" class="btn btn-dark">View More Items</button><p><br>
+                    <button id="image-gallery-button" type="button" class="btn btn-dark">View More Items</button><p><br>
+                    <!-- onClick=javascript:popUp("media.html") -->
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
@@ -368,9 +371,20 @@
     <script src="js/bootstrap-image-gallery.js"></script>
 
     <script type="text/javascript">
+    var youTubeOptions = {
+        // The list object property (or data attribute) with the YouTube video id:
+        youTubeVideoIdProperty: 'youtube',
+        // Optional object with parameters passed to the YouTube video player:
+        // https://developers.google.com/youtube/player_parameters
+        youTubePlayerVars: undefined,
+        // Require a click on the native YouTube player for the initial playback:
+        youTubeClickToPlay: true
+    };
     $('#image-gallery-button').on('click', function (event) {
             event.preventDefault();
-            blueimp.Gallery($('.image-gal'), $('#blueimp-gallery').data());
+            var target = event.target || event.srcElement, link = target.src ? target.parentNode : target, options
+ = {index: link, event: event}, links = this.getElementsByTagName('a');
+            blueimp.Gallery($('.image-gal'), target);
         });
     </script>
 </body>
