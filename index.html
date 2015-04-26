@@ -237,7 +237,6 @@
                                 <a class="image-gal" href="https://www.youtube.com/watch?v=uhhoXn0a3D4"
                                     type="text/html"
                                     data-youtube="uhhoXn0a3D4"
-                                    poster=""
                                     >Test 1</a>
                            </div>
                         </div>
@@ -382,9 +381,7 @@
     };
     $('#image-gallery-button').on('click', function (event) {
             event.preventDefault();
-            var target = event.target || event.srcElement, link = target.src ? target.parentNode : target, options
- = {index: link, event: event}, links = this.getElementsByTagName('a');
-            blueimp.Gallery($('.image-gal'), target);
+            blueimp.Gallery($('.image-gal'), youTubeOptions);
         });
     </script>
 </body>
